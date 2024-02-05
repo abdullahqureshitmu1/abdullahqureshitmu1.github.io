@@ -1,0 +1,57 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 12pt;
+	background-color: #E5E5E5; /* Updated background color */
+	color: #444; /* Updated foreground color */
+	margin: 20pt; /* Choose a margin greater than 10pt for all 4 sides */
+}
+
+h1 {
+	font-size: 28pt; /* Updated H1 font size */
+	color: #0066cc; /* Choose your H1 color */
+}
+
+h2 {
+	font-size: 24pt; /* Updated H2 font size */
+	color: #009900; /* Choose your H2 color */
+}
+
+p {
+	font-size: 16pt; /* Updated paragraph font size */
+	color: #666; /* Choose your paragraph color */
+}
+
+a {
+	color: #0066cc; /* Non-visited link color */
+	text-decoration: none; /* Remove default underline */
+}
+
+	a:hover {
+		color: #cc0000; /* Hover link color */
+	}
+
+	a:active {
+		color: #009900; /* Active link color */
+	}
+
+	a:visited {
+		color: #993399; /* Visited link color */
+	}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+.link-cell {
+	width: 30%; /* Adjust as needed */
+}
+
+.description-cell {
+	width: 70%; /* Adjust as needed */
+}
