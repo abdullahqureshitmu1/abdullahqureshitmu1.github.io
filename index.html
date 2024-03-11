@@ -9,90 +9,44 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <section id="about">
-        <h1>
-            Abdullah Qureshi | <a href="mailto:abdullah1.qureshi@torontomu.ca">abdullah1.qureshi@torontomu.ca</a>
-        </h1>
-        <!-- Navigation -->
-        <nav>
-            <ul>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Education">Education</a></li>
-                <li><a href="#courses">Courses/Programs</a></li>
-                <li><a href="#link">Links</a></li>
-            </ul>
-        </nav>
+    <header>
+        <h1>Abdullah Qureshi Lab 6 Form</h1>
+    </header>
+    <main>
+        <form id="contactForm">
+            <label for="perception">Generally, how is your perception of communicating with people online?</label>
+            <select id="perception" name="perception" required>
+                <option value="">Select an option</option>
+                <option value="positive">Positive</option>
+                <option value="neutral">Neutral</option>
+                <option value="negative">Negative</option>
+            </select>
 
-        <!-- Menu -->
-        <nav>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/abdullahqureshi551" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/abdullahqureshitmu1" target="_blank">GitHub</a></li>
-            </ul>
-        </nav>
+            <label for="elements">Which specific elements do you look for in a potential candidate's CV?</label>
+            <textarea id="elements" name="elements" required></textarea>
 
-        <!-- Content for the First Menu -->
-        <section id="LinkedIn/Github">
-        </section>
-    </section>
-    <h2>My Education and Activities</h2>
-    <section id="Education">
-        <!-- Education Section -->
-        <h2>Education</h2>
-        <ul>
-            <li><strong>High School:</strong> Middlefield Collegiate Institute (September 2016 - June 2020)</li>
-            <li><strong>University:</strong> Toronto Metropolitan University (September 2020 - April 2025)</li>
-        </ul>
-    </section>
-    <section id="courses">
-        <!-- Courses Section -->
-        <h2>Courses/Program</h2>
-        <p>
-            I am currently pursuing an undergraduate degree in Business Technology Management (BTM). BTM offers me the experience to learn business principles in courses such as ACC 100, FIN 300, and GMS 200 but also IT related skills from courses such as ITM 200, ITM 706, and ITM 708.
-        </p>
-        <ul>
-            <li>[ITM 415]: One course I found particularly helpful was ITM 415 (Business Process Management) as it taught me how processes could be applied to my co-op experiences.</li>
-        </ul>
-    </section>
-    <!-- Educational Awards Section -->
-    <h2>Educational Awards</h2>
-    <p>
-        I received the following educational awards:
-    </p>
-    <ul>
-        <li>[Deans List] - [2020-2023]</li>
-    </ul>
+            <label for="importance">How important is GPA when considering a candidate?</label>
+            <input type="range" id="importance" name="importance" min="1" max="10" required>
+            <output for="importance" id="importanceOutput">5</output>
 
-    <!-- Extra-curricular Activities Section -->
-    <h2>Extra-curricular Activities</h2>
-    <p>
-        I actively participated in the following extra-curricular activities associated with school:
-    </p>
-    <ul>
-        <li>
-            Activity 1: I participated in the WITM BSBTM Case Competition Delegate where I designed a solution with 3 other teammates for RedHat to increase both profits and diversity in the workplace and then presented the solution to a panel of over 12 judges [2020]
-        </li>
-        <li>
-            Activity 2: I participated in the Deca Symcor Future of Business and Technology Case Competition Competitor where I collaborated with 3 other teammates on designing and presenting a solution to the University of Calgary’s cybersecurity hack and presented it to a panel of 6 judges. [2020]
-        </li>
-    </ul>
-    <section id="link">
-        <!-- Table Section -->
-        <h2>Links in Table</h2>
-        <table>
-            <tr>
-                <td class="link-cell"><a href="https://example.com/link1" target="_blank">"https://github.com/abdullahqureshitmu1</a></td>
-                <td class="description-cell">Github</td>
-            </tr>
-            <tr>
-                <td class="link-cell"><a href="https://example.com/link2" target="_blank">https://www.linkedin.com/in/abdullahqureshi551/</a></td>
-                <td class="description-cell">LinkedIn</td>
-            </tr>
-        </table>
-    </section>
-    <img src="example.png" alt="Abdullah Qureshi Profile Picture">
-    <script src="button.js"></script>
+            <label for="hoursOnline">How many hours do you spend online a day?</label><br>
+            <input type="radio" id="0-5" name="hoursOnline" value="0-5" required>
+            <label for="0-5">0-5</label><br>
+            <input type="radio" id="6-10" name="hoursOnline" value="6-10">
+            <label for="6-10">6-10</label><br>
+            <input type="radio" id="11-20" name="hoursOnline" value="11-20">
+            <label for="11-20">11-20</label><br>
+            <input type="radio" id="21-30" name="hoursOnline" value="21-30">
+            <label for="21-30">21-30</label><br>
+            <input type="radio" id="31-50" name="hoursOnline" value="31-50">
+            <label for="31-50">31-50</label><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset" id="clearButton">Clear</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
