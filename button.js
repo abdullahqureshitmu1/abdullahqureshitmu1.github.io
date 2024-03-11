@@ -1,64 +1,49 @@
-// Function to prompt user for their name and display it in a specified HTML element
-function promptForName() {
-    var userName = prompt("Please enter your name:");
-    var nameDisplay = document.getElementById("nameDisplay");
-    if (userName != null && userName != "") {
-        nameDisplay.textContent = "Welcome, " + userName + "!";
-    }
-}
-
-// Function to enlarge an image when clicked
-function enlargeImage() {
-    var image = document.getElementById("myImage");
-    image.style.width = "200px"; // Adjust the size as needed
-}
-
-// Function to shrink an image when clicked
-function shrinkImage() {
-    var image = document.getElementById("myImage");
-    image.style.width = "100px"; // Adjust the size as needed
-}
-
-// Function to handle mouseover event for navigation items
-function mouseOverNav() {
-    this.style.backgroundColor = "#ccc"; // Change background color on mouseover
-}
-
-// Function to handle mouseout event for navigation items
-function mouseOutNav() {
-    this.style.backgroundColor = ""; // Restore original background color on mouseout
-}
-
-// Add event listeners when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    // Create button to prompt for name
-    var button = document.createElement("button");
-    button.textContent = "Enter Your Name";
-    button.onclick = promptForName;
-    document.body.appendChild(button);
+    var contactForm = document.getElementById("contactForm");
+    var clearButton = document.getElementById("clearButton");
 
-    // Create clickable image
-    var image = document.createElement("img");
-    image.src = "C:\\Users\\abdul\\OneDrive\\Pictures\\Screenshots\\Screenshot 2023-11-18 000532.png"; // Replace with actual path to your image
-    image.id = "myImage";
-    image.style.width = "100px"; // Initial size of the image
-    image.onclick = enlargeImage;
-    image.ondblclick = shrinkImage; // Shrink image on double click
-    document.body.appendChild(image);
+    // Function to handle form submission
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
 
-    // Add event listeners to navigation menu items
-    var navItems = document.querySelectorAll("nav ul li a");
-    navItems.forEach(function (navItem) {
-        navItem.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default link behavior
-            var targetId = navItem.getAttribute("href").substring(1); // Get the target section ID
-            var targetSection = document.getElementById(targetId); // Find the target section
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: "smooth" }); // Scroll to the target section
-            }
+        // Get form data
+        var formData = new FormData(contactForm);
+
+        // Convert FormData to JSON object
+        var formObject = {};
+        formData.forEach(function (value, key) {
+            formObject[key] = value;
         });
 
-        navItem.addEventListener("mouseover", mouseOverNav);
-        navItem.addEventListener("mouseout", mouseOutNav);
+        // Store form data in local storage
+        localStorage.setItem("formData", JSON.stringify(formObject));
+
+        // Clear form fields
+        contactForm.reset();
+
+        alert("Form submitted successfully!");
     });
+
+    // Function to handle clear button click
+    clearButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default button behavior
+
+        // Clear form fields
+        contactForm.reset();
+
+        // Remove stored form data
+        localStorage.removeItem("formData");
+    });
+
+    // Check if there is stored form data and populate the form
+    var storedData = localStorage.getItem("formData");
+    if (storedData) {
+        var parsedData = JSON.parse(storedData);
+        Object.keys(parsedData).forEach(function (key) {
+            var inputElement = contactForm.querySelector('[name="' + key + '"]');
+            if (inputElement) {
+                inputElement.value = parsedData[key];
+            }
+        });
+    }
 });
