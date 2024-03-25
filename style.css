@@ -39,7 +39,20 @@ img {
     width: 250px; /* Set the width of the image */
     height: 270px; /* Set the height of the image */
 }
+.dark-mode {
+    background-color: #333; /* Dark grey background */
+    color: #fff; /* White text */
+}
 
+    .dark-mode header,
+    .dark-mode .navigation ul li a,
+    .dark-mode .content {
+        color: #fff; /* Change text color in header, navigation links, and main content */
+    }
+
+    .dark-mode main {
+        background-color: #222; /* Darker background for the main content */
+    }
 main {
     max-width: 600px;
     margin: 20px auto;
