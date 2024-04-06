@@ -1,0 +1,284 @@
+﻿body {
+    font-family: sans-serif;
+    background-color: #f0f9f0; /* Light green background */
+    color: #333333; /* Dark grey text color */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    font-size: 14px; /* Reduced font size for the header */
+    padding: 20px 0; /* Increased padding */
+    background-color: #d3fcd1; /* Light green header background */
+    color: #000000; /* Black text color */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Aligns children elements with space between */
+    align-items: center; /* Vertically centers children elements */
+    padding: 10px 20px; /* Add padding to create space between containers */
+}
+
+.navigation {
+    position: fixed;
+    left: 15px;
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+    .navigation ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .navigation ul li {
+            margin-bottom: 10px; /* Adjusted margin */
+        }
+
+            .navigation ul li a {
+                text-decoration: none;
+                color: #ffffff; /* White text color */
+                font-size: 16px;
+                padding: 10px 20px;
+                border-radius: 25px;
+                background-color: #4caf50; /* Light green button background */
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                .navigation ul li a:hover {
+                    background-color: #388e3c; /* Darker green background on hover */
+                }
+
+main {
+    max-width: 800px;
+    margin: 100px auto; /* Increased margin */
+    padding: 20px;
+    background-color: #ffffff; /* White main content background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+}
+
+.content h2 {
+    color: #333333; /* Dark grey heading color */
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.content ul {
+    margin-bottom: 20px;
+}
+
+.content li {
+    margin-bottom: 10px;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .content table td {
+        padding: 10px;
+        border: 1px solid #cccccc; /* Light grey border color */
+    }
+
+        .content table td.description-cell {
+            font-weight: bold;
+            background-color: #f2f2f2; /* Light grey background for description cells */
+        }
+
+        .content table td.link-cell {
+            text-align: center;
+        }
+
+button {
+    padding: 10px 20px;
+    width: 115px;
+    border: none;
+    border-radius: 25px;
+    background-color: #4caf50; /* Light green button background */
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+}
+
+    button:hover {
+        background-color: #388e3c; /* Darker green background on hover */
+    }
+
+.dark-mode button {
+    background-color: #333333; /* Dark grey background in dark mode */
+    color: #ffffff; /* White text color in dark mode */
+}
+
+#darkModeButton {
+    background-color: #333333; /* Dark grey background */
+    color: #ffffff; /* White text color */
+}
+
+.navigation ul li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #4caf50; /* Light green button background */
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 10px;
+}
+
+    .navigation ul li a:hover {
+        background-color: #388e3c; /* Darker green background on hover */
+    }
+
+.dark-mode .navigation ul li a {
+    background-color: #333333; /* Dark grey background in dark mode */
+    color: #ffffff; /* White text color in dark mode */
+}
+
+img {
+    position: absolute;
+    top: 215px;
+    right: 50px;
+    width: 200px;
+    height: auto;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); /* Added shadow for depth */
+}
+
+.dark-mode {
+    background-color: #222222; /* Dark background color */
+    color: #ffffff; /* White text color */
+}
+
+    .dark-mode header {
+        background-color: #333333; /* Dark header background */
+        color: #ffffff; /* White text color */
+    }
+
+    .dark-mode .navigation ul li a {
+        color: #ffffff; /* White text color */
+    }
+
+    .dark-mode main {
+        background-color: #333333; /* Dark main content background */
+    }
+
+    .dark-mode .content h2 {
+        color: #ffffff; /* White heading color */
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Start slightly below */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.enlarged {
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    top: 45%;
+    left: 80%;
+    transform: translate(0%, -70%);
+    z-index: 1000; /* Ensure the image is above other content */
+}
+
+.appear {
+    opacity: 1; /* Make content visible */
+}
+
+.social-icon {
+    position: absolute;
+}
+
+    .social-icon:nth-of-type(1) {
+        top: 250px; /* Adjust top positioning for GitHub icon */
+        left: 93%; /* Adjust left positioning for GitHub icon */
+        transform: translateX(-50%);
+    }
+
+    .social-icon:nth-of-type(2) {
+        top: 250px; /* Adjust top positioning for LinkedIn icon */
+        left: 98%; /* Adjust left positioning for LinkedIn icon */
+        transform: translateX(-50%);
+    }
+
+    .social-icon img {
+        width: 40px; /* Adjust the size of the icons */
+        height: 40px;
+    }
+.accessibility-dropdown {
+    position: absolute;
+    top: 35px;
+    right: 75px;
+    display: inline-block;
+}
+
+.accessibility-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.accessibility-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .accessibility-content button {
+        color: #333;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        text-align: left;
+    }
+
+        .accessibility-content button:hover {
+            background-color: #ddd;
+        }
+
+.accessibility-dropdown:hover .accessibility-content {
+    display: block;
+}
+
+.navigation {
+    position: fixed;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
